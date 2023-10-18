@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Web</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #fondo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #titulo {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 80%;
+            height: auto;
+            animation: movimiento 5s infinite;
+        }
+
+        @keyframes movimiento {
+            0% { transform: translateX(-50%); }
+            50% { transform: translateX(-55%); }
+            100% { transform: translateX(-50%); }
+        }
+
+        #botones {
+            text-align: center;
+            margin-top: 20px;
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+        }
+
+        .boton {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            border-radius: 50%;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            filter: brightness(1.2);
+        }
+
+        #marge-img, #homer-img, #bart-img, #lisa-img, #maggie-img {
+            display: none;
+            position: fixed;
+            top: 50%;
+            right: 20px; /* Ajusta la distancia desde el margen derecho */
+            transform: translate(0, -50%);
+        }
+
+        #bart-img {
+            width: 20%; 
+        }
+
+        #lisa-img {
+            width: 15%;
+        }
+    </style>
+</head>
+<body>
+    <img id="fondo" src="https://c4.wallpaperflare.com/wallpaper/772/718/465/clouds-the-simpsons-figure-background-wallpaper-preview.jpg" alt="Fondo">
+
+    <img id="titulo" src="https://i.pinimg.com/originals/3a/a8/11/3aa8119a237415c1389720fc338a9e31.png" alt="Titulo">
+
+    <div id="botones">
+        <div class="boton" onmouseover="mostrarImagen('marge-img')" onclick="mostrarImagen('marge-img')"></div>
+        <div class="boton" onmouseover="mostrarImagen('homer-img')" onclick="mostrarImagen('homer-img')"></div>
+        <div class="boton" onmouseover="mostrarImagen('bart-img')" onclick="mostrarImagen('bart-img')"></div>
+        <div class="boton" onmouseover="mostrarImagen('lisa-img')" onclick="mostrarImagen('lisa-img')"></div>
+        <div class="boton" onmouseover="mostrarImagen('maggie-img')" onclick="mostrarImagen('maggie-img')"></div>
+    </div>
+
+    <img id="marge-img" src="https://static.wikia.nocookie.net/doblaje/images/b/bb/Marge.png/revision/latest/thumbnail/width/360/height/450?cb=20131124215238&path-prefix=es" alt="Marge">
+    <img id="homer-img" src="https://static.wikia.nocookie.net/doblaje/images/3/3c/HomerSimpson.png/revision/latest/thumbnail/width/360/height/450?cb=20220925232034&path-prefix=es" alt="Homer">
+    <img id="bart-img" src="https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png" alt="Bart">
+    <img id="lisa-img" src="https://static.wikia.nocookie.net/doblaje/images/5/59/Lisa.png/revision/latest?cb=20131124215512&path-prefix=es" alt="Lisa">
+    <img id="maggie-img" src="https://static.wikia.nocookie.net/doblaje/images/9/9d/Maggie_Simpson.png/revision/latest?cb=20131124215831&path-prefix=es" alt="Maggie">
+
+    <script>
+        function mostrarImagen(id) {
+            document.getElementById('marge-img').style.display = 'none';
+            document.getElementById('homer-img').style.display = 'none';
+            document.getElementById('bart-img').style.display = 'none';
+            document.getElementById('lisa-img').style.display = 'none';
+            document.getElementById('maggie-img').style.display = 'none';
+
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
